@@ -1,8 +1,7 @@
 import { Download, Github, Linkedin, Code2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const roles = ['Frontend Developer', 'AI/ML Enthusiast', 'Problem Solver'];
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       {/* Background Effects */}
@@ -13,7 +12,12 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left animate-slide-up">
+          <motion.div 
+            className="flex-1 text-center lg:text-left"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <p className="text-primary font-medium mb-4 tracking-widest uppercase">Welcome to my portfolio</p>
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-4">
               <span className="text-foreground">I'm </span>
@@ -29,7 +33,12 @@ const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
+            <motion.div 
+              className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <a
                 href="https://yassh05.github.io/PORTFOLIO/RESUME.pdf"
                 target="_blank"
@@ -45,10 +54,15 @@ const Hero = () => {
               >
                 Get In Touch
               </a>
-            </div>
+            </motion.div>
 
             {/* Social Links */}
-            <div className="flex gap-4 justify-center lg:justify-start">
+            <motion.div 
+              className="flex gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
               <a
                 href="https://linkedin.com/in/yasshsharma"
                 target="_blank"
@@ -73,11 +87,16 @@ const Hero = () => {
               >
                 <Code2 size={24} />
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Profile Image */}
-          <div className="flex-1 flex justify-center lg:justify-end" style={{ animationDelay: '0.3s' }}>
+          <motion.div 
+            className="flex-1 flex justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <div className="relative animate-float">
               <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl animate-pulse-glow" />
               <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/50 glow-primary">
@@ -88,7 +107,7 @@ const Hero = () => {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
