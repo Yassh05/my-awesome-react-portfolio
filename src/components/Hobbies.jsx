@@ -1,19 +1,20 @@
 import { Flag, Tv, Gamepad2, Music, Plane, Dumbbell } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const hobbies = [
   {
     title: 'Formula 1',
     description: 'Passionate F1 fan following every race weekend. Love the strategy, engineering, and adrenaline of motorsport.',
     icon: Flag,
-    color: 'text-red-500',
-    bgColor: 'bg-red-500/10',
+    color: 'text-accent',
+    bgColor: 'bg-accent/10',
   },
   {
     title: 'UFC / MMA',
     description: 'Big fan of UFC and mixed martial arts. Following fighters, studying techniques, and never missing a big fight night.',
     icon: Dumbbell,
-    color: 'text-orange-500',
-    bgColor: 'bg-orange-500/10',
+    color: 'text-accent',
+    bgColor: 'bg-accent/10',
   },
   {
     title: 'Anime',
@@ -26,8 +27,8 @@ const hobbies = [
     title: 'Gaming',
     description: 'Enjoy gaming in my free time - from competitive multiplayer to immersive single-player experiences.',
     icon: Gamepad2,
-    color: 'text-green-500',
-    bgColor: 'bg-green-500/10',
+    color: 'text-primary',
+    bgColor: 'bg-primary/10',
   },
   {
     title: 'Music',
@@ -45,25 +46,57 @@ const hobbies = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
 const Hobbies = () => {
   return (
     <section id="hobbies" className="py-24 relative">
       <div className="absolute inset-0 bg-grid opacity-20" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
             Beyond <span className="text-gradient">Code</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             When I'm not coding, here's what keeps me entertained
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {hobbies.map((hobby, index) => (
-            <div
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {hobbies.map((hobby) => (
+            <motion.div
               key={hobby.title}
+              variants={itemVariants}
               className="group p-6 bg-card rounded-xl border border-border card-hover"
             >
               <div className="flex items-start gap-4">
@@ -71,7 +104,7 @@ const Hobbies = () => {
                   <hobby.icon size={28} />
                 </div>
                 <div>
-                  <h3 className={`font-display text-xl font-semibold mb-2 group-hover:${hobby.color} transition-colors`}>
+                  <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {hobby.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -79,20 +112,26 @@ const Hobbies = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Fun F1 & UFC Banner */}
-        <div className="mt-16 p-8 bg-gradient-to-r from-red-500/10 via-card to-orange-500/10 rounded-2xl border border-border text-center">
+        <motion.div 
+          className="mt-16 p-8 bg-gradient-to-r from-accent/10 via-card to-accent/10 rounded-2xl border border-border text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <h3 className="font-display text-2xl font-bold mb-4">
-            <span className="text-red-500">F1</span> x <span className="text-orange-500">UFC</span> Enthusiast
+            <span className="text-accent">F1</span> x <span className="text-accent">UFC</span> Enthusiast
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Weekends are for race days and fight nights. From the Monaco Grand Prix to the UFC octagon, 
             I'm always hyped for the action. Who's your favorite driver and fighter? Let's chat!
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

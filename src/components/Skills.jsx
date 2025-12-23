@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const skills = [
   {
     name: 'HTML',
@@ -41,27 +43,58 @@ const skills = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
 const Skills = () => {
   return (
     <section id="skills" className="py-24 relative">
       <div className="absolute inset-0 bg-grid opacity-20" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">Skills</span> & Expertise
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Technologies and programming languages I've mastered throughout my journey
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
-            <div
+        <motion.div 
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {skills.map((skill) => (
+            <motion.div
               key={skill.name}
+              variants={itemVariants}
               className="group p-6 bg-card rounded-xl border border-border card-hover"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex flex-col items-center text-center">
                 <div className="w-16 h-16 mb-4 p-3 bg-secondary rounded-xl group-hover:glow-primary transition-all duration-300">
@@ -78,9 +111,9 @@ const Skills = () => {
                   {skill.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
