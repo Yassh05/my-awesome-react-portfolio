@@ -6,8 +6,8 @@ const hobbies = [
     title: 'Formula 1',
     description: 'Passionate F1 fan following every race weekend. Love the strategy, engineering, and adrenaline of motorsport.',
     icon: Flag,
-    color: 'text-accent',
-    bgColor: 'bg-accent/10',
+    color: 'text-red-500',
+    bgColor: 'bg-red-500/10',
   },
   {
     title: 'UFC / MMA',
@@ -118,14 +118,14 @@ const Hobbies = () => {
 
         {/* Fun F1 & UFC Banner */}
         <motion.div 
-          className="mt-16 p-8 bg-gradient-to-r from-accent/10 via-card to-accent/10 rounded-2xl border border-border text-center"
+          className="mt-16 p-8 bg-gradient-to-r from-red-500/10 via-card to-accent/10 rounded-2xl border border-border text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h3 className="font-display text-2xl font-bold mb-4">
-            <span className="text-accent">F1</span> x <span className="text-accent">UFC</span> Enthusiast
+            <span className="text-red-500">F1</span> x <span className="text-accent">UFC</span> Enthusiast
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Weekends are for race days and fight nights. From the Monaco Grand Prix to the UFC octagon, 

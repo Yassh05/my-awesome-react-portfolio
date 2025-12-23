@@ -1,7 +1,37 @@
 import { Download, Github, Linkedin, Code2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
+const roles = ['Frontend Developer', 'AI/ML Enthusiast', 'Problem Solver', 'Web Developer'];
 
 const Hero = () => {
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[currentRoleIndex];
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayedText.length < currentRole.length) {
+          setDisplayedText(currentRole.slice(0, displayedText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        if (displayedText.length > 0) {
+          setDisplayedText(displayedText.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentRoleIndex]);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       {/* Background Effects */}
@@ -23,8 +53,9 @@ const Hero = () => {
               <span className="text-foreground">I'm </span>
               <span className="text-gradient glow-text">Yash Sharma</span>
             </h1>
-            <h2 className="font-display text-2xl md:text-3xl text-accent font-semibold mb-6">
-              Frontend Developer
+            <h2 className="font-display text-2xl md:text-3xl text-accent font-semibold mb-6 h-10 md:h-12">
+              {displayedText}
+              <span className="animate-pulse">|</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
               Computer Science student specializing in Artificial Intelligence and Machine Learning 
