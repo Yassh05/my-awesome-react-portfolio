@@ -7,10 +7,12 @@ import Achievements from '../components/Achievements';
 import Hobbies from '../components/Hobbies';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import ScrollProgress from '../components/ScrollProgress';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />

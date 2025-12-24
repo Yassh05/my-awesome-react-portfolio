@@ -50,9 +50,9 @@ const Hero = () => {
               <span className="text-foreground">I'm </span>
               <span className="text-gradient glow-text text-accent">Yash Sharma</span>
             </h1>
-            <h2 className="font-display text-2xl md:text-3xl text-accent font-semibold mb-6 h-10 md:h-12">
+            <h2 className="font-display text-2xl md:text-3xl text-primary font-semibold mb-6 h-10 md:h-12">
               {displayedText}
-              <span className="animate-pulse">|</span>
+              <span className="animate-pulse text-primary">|</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
               Computer Science student specializing in Artificial Intelligence and Machine Learning 

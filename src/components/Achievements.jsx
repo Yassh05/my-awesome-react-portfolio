@@ -75,7 +75,7 @@ const Achievements = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient-accent">Achievements</span> & Recognition
+            <span className="text-gradient">Achievements</span> & Recognition
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Milestones and awards that mark my journey of excellence
@@ -99,20 +99,20 @@ const Achievements = () => {
               <div className="absolute left-0 top-0 bottom-0 w-px bg-border" />
               
               {/* Timeline Dot */}
-              <div className="absolute left-0 top-0 w-2 h-2 -translate-x-1/2 rounded-full bg-accent glow-accent" />
+              <div className="absolute left-0 top-0 w-2 h-2 -translate-x-1/2 rounded-full bg-primary glow-primary" />
               
               <div className="group p-6 bg-card rounded-xl border border-border card-hover ml-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-accent/10 rounded-xl text-accent group-hover:glow-accent transition-all duration-300">
+                  <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:glow-primary transition-all duration-300">
                     <achievement.icon size={24} />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-accent font-display font-bold">{achievement.year}</span>
+                      <span className="text-primary font-display font-bold">{achievement.year}</span>
                       <span className="text-muted-foreground text-sm">•</span>
                       <span className="text-muted-foreground text-sm">{achievement.organization}</span>
                     </div>
-                    <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
+                    <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                       {achievement.title}
                     </h3>
                     <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
@@ -122,7 +122,7 @@ const Achievements = () => {
                       {achievement.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 text-xs font-medium bg-accent/10 text-accent rounded-full"
+                          className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
                         >
                           {tag}
                         </span>
