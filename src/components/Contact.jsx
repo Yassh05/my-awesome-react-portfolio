@@ -1,6 +1,8 @@
-import { Mail, MapPin, Send, Github, Linkedin, Code2 } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, Code2, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,12 +10,31 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Create mailto link
-    const mailtoLink = `mailto:yash_sharma0512@outlook.com?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AFrom: ${formData.name}%0AEmail: ${formData.email}`;
-    window.location.href = mailtoLink;
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        });
+
+      if (error) throw error;
+
+      toast.success('Message sent successfully! I will get back to you soon.');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -145,10 +166,20 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground font-semibold rounded-lg glow-primary hover:scale-[1.02] transition-transform duration-300"
+                disabled={isSubmitting}
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground font-semibold rounded-lg glow-primary hover:scale-[1.02] transition-transform duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <Send size={20} />
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={20} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </motion.div>
