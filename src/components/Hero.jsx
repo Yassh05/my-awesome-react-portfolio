@@ -48,7 +48,7 @@ const Hero = () => {
             <p className="text-primary font-medium mb-4 tracking-widest uppercase">Welcome to my portfolio</p>
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-4">
               <span className="text-foreground">I'm </span>
-              <span className="text-gradient glow-text">Yash Sharma</span>
+              <span className="text-gradient glow-text text-accent">Yash Sharma</span>
             </h1>
             <h2 className="font-display text-2xl md:text-3xl text-accent font-semibold mb-6 h-10 md:h-12">
               {displayedText}
