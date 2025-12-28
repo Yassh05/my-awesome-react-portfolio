@@ -59,71 +59,60 @@ const itemVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
 
 const Achievements = () => {
   return (
-    <section id="achievements" className="py-24 bg-card/30 relative">
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="text-center mb-16"
+    <section id="achievements" className="py-24 bg-card-30 relative">
+      <div className="container relative z-10">
+        <motion.div
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="section-title">
             <span className="text-gradient">Achievements</span> & Recognition
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Milestones and awards that mark my journey of excellence
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
         >
           {achievements.map((achievement) => (
-            <motion.div
-              key={achievement.title}
-              variants={itemVariants}
-              className="relative pl-8 pb-12 last:pb-0"
-            >
+            <motion.div key={achievement.title} variants={itemVariants} className="achievement-item">
               {/* Timeline Line */}
-              <div className="absolute left-0 top-0 bottom-0 w-px bg-border" />
-              
+              <div className="achievement-line" />
+
               {/* Timeline Dot */}
-              <div className="absolute left-0 top-0 w-2 h-2 -translate-x-1/2 rounded-full bg-primary glow-primary" />
-              
-              <div className="group p-6 bg-card rounded-xl border border-border card-hover ml-6">
+              <div className="achievement-dot" />
+
+              <div className="achievement-card">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:glow-primary transition-all duration-300">
+                  <div className="achievement-icon">
                     <achievement.icon size={24} />
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-primary font-display font-bold">{achievement.year}</span>
+                  <div style={{ flex: 1 }}>
+                    <div className="achievement-meta">
+                      <span className="achievement-year">{achievement.year}</span>
                       <span className="text-muted-foreground text-sm">•</span>
-                      <span className="text-muted-foreground text-sm">{achievement.organization}</span>
+                      <span className="achievement-org">{achievement.organization}</span>
                     </div>
-                    <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                      {achievement.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
+                    <h3 className="achievement-title">{achievement.title}</h3>
+                    <p className="achievement-description">{achievement.description}</p>
+                    <div className="achievement-tags">
                       {achievement.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
-                        >
+                        <span key={tag} className="achievement-tag">
                           {tag}
                         </span>
                       ))}

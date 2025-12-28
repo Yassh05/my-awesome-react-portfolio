@@ -68,7 +68,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
 
@@ -76,59 +76,52 @@ const Certifications = () => {
   return (
     <section id="certifications" className="py-24 relative">
       <div className="absolute inset-0 bg-grid opacity-20" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="text-center mb-16"
+
+      <div className="container relative z-10">
+        <motion.div
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="section-title">
             Professional <span className="text-gradient">Certifications</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Industry-recognized certifications validating my expertise
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        <motion.div
+          className="certs-grid"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
         >
           {certifications.map((cert) => (
             <motion.div
               key={`${cert.title}-${cert.issuer}`}
               variants={itemVariants}
-              className="group p-6 bg-card rounded-xl border border-border card-hover relative overflow-hidden"
+              className="cert-card"
             >
               {cert.verified && (
-                <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center gap-1 px-2 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
-                    <Award size={12} />
-                    Verified
-                  </span>
+                <div className="cert-badge">
+                  <Award size={12} />
+                  Verified
                 </div>
               )}
-              
+
               <div className="mb-4">
-                <h3 className="font-display text-lg font-semibold mb-2 group-hover:text-primary transition-colors pr-20">
-                  {cert.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">{cert.issuer}</p>
-                <p className="text-primary text-sm mt-1">{cert.date}</p>
+                <h3 className="cert-title">{cert.title}</h3>
+                <p className="cert-issuer">{cert.issuer}</p>
+                <p className="cert-date">{cert.date}</p>
               </div>
-              
-              <div className="flex flex-wrap gap-2">
+
+              <div className="cert-tags">
                 {cert.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full"
-                  >
+                  <span key={tag} className="cert-tag">
                     {tag}
                   </span>
                 ))}
