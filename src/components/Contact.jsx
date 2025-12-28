@@ -38,54 +38,51 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-card/30 relative">
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="text-center mb-16"
+    <section id="contact" className="py-24 bg-card-30 relative">
+      <div className="container relative z-10">
+        <motion.div
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="section-title">
             Let's <span className="text-gradient">Connect</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Have a project in mind or just want to chat? I'd love to hear from you!
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="contact-grid">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
           >
             <h3 className="font-display text-2xl font-semibold mb-8">Get In Touch</h3>
-            
-            <div className="space-y-6 mb-10">
-              <a
-                href="mailto:yash_sharma0512@outlook.com"
-                className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary transition-colors group"
-              >
-                <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:glow-primary transition-all">
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2.5rem' }}>
+              <a href="mailto:yash_sharma0512@outlook.com" className="contact-info-card">
+                <div className="contact-info-icon">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium group-hover:text-primary transition-colors">yash_sharma0512@outlook.com</p>
+                  <p className="contact-info-label">Email</p>
+                  <p className="contact-info-value">yash_sharma0512@outlook.com</p>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border">
-                <div className="p-3 bg-primary/10 rounded-lg text-primary">
+              <div className="contact-info-card">
+                <div className="contact-info-icon">
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">India</p>
+                  <p className="contact-info-label">Location</p>
+                  <p className="contact-info-value">India</p>
                 </div>
               </div>
             </div>
@@ -98,7 +95,7 @@ const Contact = () => {
                   href="https://linkedin.com/in/yasshsharma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-card border border-border rounded-xl hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300"
+                  className="contact-social"
                 >
                   <Linkedin size={24} />
                 </a>
@@ -106,7 +103,7 @@ const Contact = () => {
                   href="https://github.com/Yassh05"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-card border border-border rounded-xl hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300"
+                  className="contact-social"
                 >
                   <Github size={24} />
                 </a>
@@ -114,7 +111,7 @@ const Contact = () => {
                   href="https://www.hackerrank.com/profile/yash_sharma0512"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-card border border-border rounded-xl hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300"
+                  className="contact-social"
                 >
                   <Code2 size={24} />
                 </a>
@@ -123,51 +120,51 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div 
-            className="bg-card p-8 rounded-2xl border border-border"
+          <motion.div
+            className="form-card"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">Your Name</label>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label className="form-label">Your Name</label>
                 <input
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  className="form-input"
                   placeholder="John Doe"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Email Address</label>
+              <div className="form-group">
+                <label className="form-label">Email Address</label>
                 <input
                   type="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  className="form-input"
                   placeholder="john@example.com"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Message</label>
+              <div className="form-group">
+                <label className="form-label">Message</label>
                 <textarea
                   required
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+                  className="form-input form-textarea"
                   placeholder="Your message here..."
                 />
               </div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground font-semibold rounded-lg glow-primary hover:scale-[1.02] transition-transform duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className={`btn btn-primary btn-full ${isSubmitting ? 'btn-disabled' : ''}`}
               >
                 {isSubmitting ? (
                   <>

@@ -58,7 +58,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
 
@@ -66,50 +66,38 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 relative">
       <div className="absolute inset-0 bg-grid opacity-20" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="text-center mb-16"
+
+      <div className="container relative z-10">
+        <motion.div
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="section-title">
             <span className="text-gradient">Skills</span> & Expertise
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Technologies and programming languages I've mastered throughout my journey
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        <motion.div
+          className="skills-grid"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
         >
           {skills.map((skill) => (
-            <motion.div
-              key={skill.name}
-              variants={itemVariants}
-              className="group p-6 bg-card rounded-xl border border-border card-hover"
-            >
+            <motion.div key={skill.name} variants={itemVariants} className="card">
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 mb-4 p-3 bg-secondary rounded-xl group-hover:glow-primary transition-all duration-300">
-                  <img
-                    src={skill.icon}
-                    alt={skill.name}
-                    className="w-full h-full object-contain"
-                  />
+                <div className="card-icon">
+                  <img src={skill.icon} alt={skill.name} className="object-contain" style={{ width: '100%', height: '100%' }} />
                 </div>
-                <h3 className="font-display text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {skill.name}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {skill.description}
-                </p>
+                <h3 className="card-title">{skill.name}</h3>
+                <p className="card-description">{skill.description}</p>
               </div>
             </motion.div>
           ))}

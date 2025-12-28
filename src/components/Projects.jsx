@@ -67,54 +67,46 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: 'easeOut' },
   },
 };
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-card/30 relative">
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="text-center mb-16"
+    <section id="projects" className="py-24 bg-card-30 relative">
+      <div className="container relative z-10">
+        <motion.div
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="section-title">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="section-subtitle">
             A showcase of my recent work and personal projects
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        <motion.div
+          className="projects-grid"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
         >
           {projects.map((project) => (
-            <motion.div
-              key={project.title}
-              variants={itemVariants}
-              className="group bg-card rounded-xl overflow-hidden border border-border card-hover"
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-4">
+            <motion.div key={project.title} variants={itemVariants} className="project-card">
+              <div className="project-image-wrapper">
+                <img src={project.image} alt={project.title} className="project-image" />
+                <div className="project-overlay">
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-primary rounded-lg text-primary-foreground hover:scale-110 transition-transform"
+                    className="project-link project-link-primary"
                   >
                     <ExternalLink size={20} />
                   </a>
@@ -122,25 +114,18 @@ const Projects = () => {
                     href={project.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-secondary rounded-lg text-foreground hover:scale-110 transition-transform"
+                    className="project-link project-link-secondary"
                   >
                     <Github size={20} />
                   </a>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-tags">
                   {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
-                    >
+                    <span key={tag} className="project-tag">
                       {tag}
                     </span>
                   ))}
