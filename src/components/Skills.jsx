@@ -1,45 +1,32 @@
 import { motion } from 'framer-motion';
 
-const skills = [
+const skillCategories = [
   {
-    name: 'HTML',
-    description: 'Skilled in HTML markup, structure, and semantic elements.',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+    category: 'Programming Languages',
+    skills: [
+      { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+      { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+      { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    ],
   },
   {
-    name: 'CSS',
-    description: 'Mastering CSS: Styling, Layout, Responsiveness, and Animations.',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+    category: 'Web Development',
+    skills: [
+      { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+      { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+      { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    ],
   },
   {
-    name: 'JavaScript',
-    description: 'Proficient in JavaScript, modern ES6+ features and DOM manipulation.',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  },
-  {
-    name: 'React',
-    description: 'Building modern, interactive UIs with React and its ecosystem.',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-  },
-  {
-    name: 'Python',
-    description: 'Proficient in Python, adept at data analysis and automation. 4 star coder at HackerRank.',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  },
-  {
-    name: 'C++',
-    description: 'Proficient in C++ programming, adept at object-oriented design. 5 star coder at HackerRank.',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
-  },
-  {
-    name: 'Java',
-    description: 'Proficient in Java. Achieved Elite Silver Rank in Programming in Java by NPTEL.',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-  },
-  {
-    name: 'C',
-    description: 'Proficient in C programming language, adept at problem-solving.',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
+    category: 'Python Libraries',
+    skills: [
+      { name: 'NumPy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+      { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+      { name: 'Matplotlib', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg' },
+      { name: 'OpenCV', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
+    ],
   },
 ];
 
@@ -64,8 +51,8 @@ const itemVariants = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 relative">
-      <div className="absolute inset-0 bg-grid opacity-20" />
+    <section id="skills" className="section">
+      <div className="bg-grid" />
 
       <div className="container relative z-10">
         <motion.div
@@ -83,25 +70,37 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          className="skills-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-        >
-          {skills.map((skill) => (
-            <motion.div key={skill.name} variants={itemVariants} className="card">
-              <div className="flex flex-col items-center text-center">
-                <div className="card-icon">
-                  <img src={skill.icon} alt={skill.name} className="object-contain" style={{ width: '100%', height: '100%' }} />
-                </div>
-                <h3 className="card-title">{skill.name}</h3>
-                <p className="card-description">{skill.description}</p>
-              </div>
+        {skillCategories.map((category) => (
+          <div key={category.category} className="skill-category">
+            <motion.h3
+              className="skill-category-title"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.5 }}
+            >
+              {category.category}
+            </motion.h3>
+            <motion.div
+              className="skills-grid"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+            >
+              {category.skills.map((skill) => (
+                <motion.div key={skill.name} variants={itemVariants} className="card skill-card">
+                  <div className="skill-card-content">
+                    <div className="card-icon">
+                      <img src={skill.icon} alt={skill.name} className="skill-icon-img" />
+                    </div>
+                    <h4 className="skill-name">{skill.name}</h4>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
+        ))}
       </div>
     </section>
   );
