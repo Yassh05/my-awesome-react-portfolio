@@ -1,4 +1,4 @@
-import { Mail, MapPin, Send, Github, Linkedin, Code2, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, Code2, Binary, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { supabase } from '@/integrations/supabase/client';
@@ -114,6 +114,14 @@ const Contact = () => {
                   className="contact-social"
                 >
                   <Code2 size={24} />
+                </a>
+                <a
+                  href="https://leetcode.com/u/YOUR_LEETCODE_USERNAME"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-social"
+                >
+                  <Binary size={24} />
                 </a>
               </div>
             </div>
