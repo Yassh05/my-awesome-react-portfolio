@@ -1568,3 +1568,117 @@ button {
     flex-direction: row;
   }
 }
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.timeline-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  box-shadow: 0 0 20px hsla(var(--primary), 0.4);
+}
+
+.timeline-icon-education {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+.timeline-icon-experience {
+  background: linear-gradient(135deg, hsl(160, 60%, 45%), hsl(200, 70%, 50%));
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, hsl(var(--primary)), transparent);
+  margin-top: 0.5rem;
+  min-height: 2rem;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-bottom: 1rem;
+}
+
+.timeline-card {
+  padding: 1.5rem;
+}
+
+.timeline-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-badge-education {
+  background: hsla(var(--primary), 0.2);
+  color: hsl(var(--primary));
+}
+
+.timeline-badge-experience {
+  background: hsla(160, 60%, 45%, 0.2);
+  color: hsl(160, 60%, 55%);
+}
+
+.timeline-period {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.timeline-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.25rem;
+}
+
+.timeline-organization {
+  font-size: 0.9375rem;
+  color: hsl(var(--primary));
+  margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+}
