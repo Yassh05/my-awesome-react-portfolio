@@ -1,4 +1,4 @@
-import { Flag, Tv, Gamepad2, Music, Plane, Dumbbell } from 'lucide-react';
+import { Flag, Tv, Gamepad2, Music, Plane, Dumbbell, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const hobbies = [
@@ -15,6 +15,13 @@ const hobbies = [
     icon: Dumbbell,
     color: 'text-accent',
     bgColor: 'bg-accent-10',
+  },
+  {
+    title: 'Football',
+    description: 'Love the beautiful game! Whether watching or playing, football brings excitement, teamwork, and unforgettable moments.',
+    icon: Trophy,
+    color: 'text-green-500',
+    bgColor: 'bg-green-500-10',
   },
   {
     title: 'Anime',
