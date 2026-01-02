@@ -1,30 +1,39 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, Calendar } from 'lucide-react';
 
-const timelineData = [
+const educationData = [
   {
-    type: 'education',
     title: 'B.Tech in Computer Science (AI/ML)',
     organization: 'Your University Name',
     period: '2021 - 2025',
     description: 'Specializing in Artificial Intelligence and Machine Learning with strong foundation in Data Structures and Algorithms.',
-    icon: GraduationCap,
   },
   {
-    type: 'education',
-    title: 'Higher Secondary Education',
+    title: 'Higher Secondary (12th)',
     organization: 'Your School Name',
     period: '2019 - 2021',
-    description: 'Completed 12th grade with focus on Science and Mathematics.',
-    icon: GraduationCap,
+    description: 'Completed with focus on Science and Mathematics.',
   },
   {
-    type: 'experience',
+    title: 'Secondary Education (10th)',
+    organization: 'Your School Name',
+    period: '2019',
+    description: 'Completed secondary education with excellent academic performance.',
+  },
+];
+
+const experienceData = [
+  {
     title: 'Web Development Intern',
     organization: 'Company Name',
     period: 'Jun 2024 - Present',
     description: 'Building responsive web applications using React, Node.js, and modern web technologies.',
-    icon: Briefcase,
+  },
+  {
+    title: 'Project Work',
+    organization: 'University Projects',
+    period: '2022 - Present',
+    description: 'Developed multiple projects including face recognition systems, web applications, and ML models.',
   },
 ];
 
@@ -33,19 +42,35 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
+
+const TimelineCard = ({ item, type }) => (
+  <motion.div variants={itemVariants} className="timeline-card-wrapper">
+    <div className="timeline-card card">
+      <div className="timeline-card-header">
+        <div className="timeline-period">
+          <Calendar size={14} />
+          <span>{item.period}</span>
+        </div>
+      </div>
+      <h4 className="timeline-title">{item.title}</h4>
+      <p className="timeline-organization">{item.organization}</p>
+      <p className="timeline-description">{item.description}</p>
+    </div>
+  </motion.div>
+);
 
 const Experience = () => {
   return (
@@ -68,47 +93,49 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          className="timeline"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-        >
-          {timelineData.map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="timeline-item"
-              >
-                <div className="timeline-marker">
-                  <div className={`timeline-icon ${item.type === 'education' ? 'timeline-icon-education' : 'timeline-icon-experience'}`}>
-                    <IconComponent size={20} />
-                  </div>
-                  {index < timelineData.length - 1 && <div className="timeline-line" />}
-                </div>
-                <div className="timeline-content">
-                  <div className="timeline-card card">
-                    <div className="timeline-card-header">
-                      <span className={`timeline-badge ${item.type === 'education' ? 'timeline-badge-education' : 'timeline-badge-experience'}`}>
-                        {item.type === 'education' ? 'Education' : 'Experience'}
-                      </span>
-                      <div className="timeline-period">
-                        <Calendar size={14} />
-                        <span>{item.period}</span>
-                      </div>
-                    </div>
-                    <h3 className="timeline-title">{item.title}</h3>
-                    <p className="timeline-organization">{item.organization}</p>
-                    <p className="timeline-description">{item.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        <div className="experience-split-layout">
+          {/* Education Column */}
+          <motion.div
+            className="experience-column"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            <div className="experience-column-header">
+              <div className="experience-icon experience-icon-education">
+                <GraduationCap size={24} />
+              </div>
+              <h3 className="experience-column-title">Education</h3>
+            </div>
+            <div className="experience-column-content">
+              {educationData.map((item, index) => (
+                <TimelineCard key={index} item={item} type="education" />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Experience Column */}
+          <motion.div
+            className="experience-column"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            <div className="experience-column-header">
+              <div className="experience-icon experience-icon-work">
+                <Briefcase size={24} />
+              </div>
+              <h3 className="experience-column-title">Experience</h3>
+            </div>
+            <div className="experience-column-content">
+              {experienceData.map((item, index) => (
+                <TimelineCard key={index} item={item} type="experience" />
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
