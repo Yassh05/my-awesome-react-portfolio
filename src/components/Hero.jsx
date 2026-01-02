@@ -1,4 +1,4 @@
-import { Download, Github, Linkedin, Code2 } from 'lucide-react';
+import { Download, Github, Linkedin, Code2, Binary } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
@@ -112,6 +112,14 @@ const Hero = () => {
                 className="social-icon"
               >
                 <Code2 size={24} />
+              </a>
+              <a
+                href="https://leetcode.com/u/YOUR_LEETCODE_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+              >
+                <Binary size={24} />
               </a>
             </motion.div>
           </motion.div>
