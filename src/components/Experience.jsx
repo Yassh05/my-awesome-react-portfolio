@@ -4,30 +4,30 @@ import { GraduationCap, Briefcase, Calendar } from 'lucide-react';
 const educationData = [
   {
     title: 'B.Tech in Computer Science (AI/ML)',
-    organization: 'Your University Name',
-    period: '2021 - 2025',
+    organization: 'Dronacharya College of Engineering',
+    period: '2023 - 2027',
     description: 'Specializing in Artificial Intelligence and Machine Learning with strong foundation in Data Structures and Algorithms.',
   },
   {
     title: 'Higher Secondary (12th)',
-    organization: 'Your School Name',
-    period: '2019 - 2021',
+    organization: 'G.D. Goenka Public School',
+    period: '2022 -2023',
     description: 'Completed with focus on Science and Mathematics.',
   },
   {
     title: 'Secondary Education (10th)',
-    organization: 'Your School Name',
-    period: '2019',
+    organization: 'Meenakshi Public School',
+    period: '2020 - 2021',
     description: 'Completed secondary education with excellent academic performance.',
   },
 ];
 
 const experienceData = [
   {
-    title: 'Web Development Intern',
-    organization: 'Company Name',
-    period: 'Jun 2024 - Present',
-    description: 'Building responsive web applications using React, Node.js, and modern web technologies.',
+    title: 'IT & AI Intern',
+    organization: 'Subros Limited',
+    period: 'Jun 2025 - Aug 2025',
+    description: 'Developed and implemented face detection and recognition models using Python, OpenCV, and machine learning libraries.',
   },
   {
     title: 'Project Work',
