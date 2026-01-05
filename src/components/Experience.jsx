@@ -28,13 +28,7 @@ const experienceData = [
     organization: 'Subros Limited',
     period: 'Jun 2025 - Aug 2025',
     description: 'Developed and implemented face detection and recognition models using Python, OpenCV, and machine learning libraries.',
-  },
-  {
-    title: 'Project Work',
-    organization: 'University Projects',
-    period: '2022 - Present',
-    description: 'Developed multiple projects including face recognition systems, web applications, and ML models.',
-  },
+  }
 ];
 
 const containerVariants = {
