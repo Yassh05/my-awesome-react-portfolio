@@ -12,6 +12,14 @@ const achievements = [
   },
   {
     year: '2025',
+    title: 'Hack o Relay 4.0 — Winner',
+    organization: 'GDG Club, Dronacharya College of Engineering',
+    description: 'Won the Hack o Relay 4.0 hackathon organized by the Google Developer Groups club at DCE, showcasing innovation and technical excellence.',
+    tags: ['Hackathon', 'Winner', 'GDG'],
+    icon: Trophy,
+  },
+  {
+    year: '2025',
     title: 'Best Senator Award — Wisdom Bharati Forum',
     organization: 'National Youth Parliament',
     description: 'Honored as the Best Senator for exceptional articulation, leadership, and impactful participation in the National Youth Parliament organized by WBF.',
