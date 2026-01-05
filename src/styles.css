@@ -804,11 +804,27 @@ button {
 
 /* Cards */
 /* Skill Categories */
-.skill-category {
-  margin-bottom: 3rem;
+.skills-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
-.skill-category:last-child {
+@media (min-width: 768px) {
+  .skills-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .skills-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+.skill-category {
   margin-bottom: 0;
 }
 
@@ -1400,7 +1416,6 @@ button {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  max-width: 28rem;
 }
 
 .projects-grid {

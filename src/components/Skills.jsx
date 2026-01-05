@@ -94,37 +94,39 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        {skillCategories.map((category) => (
-          <div key={category.category} className="skill-category">
-            <motion.h3
-              className="skill-category-title"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.5 }}
-            >
-              {category.category}
-            </motion.h3>
-            <motion.div
-              className="skills-grid"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-            >
-              {category.skills.map((skill) => (
-                <motion.div key={skill.name} variants={itemVariants} className="card skill-card">
-                  <div className="skill-card-content">
-                    <div className="card-icon">
-                      <img src={skill.icon} alt={skill.name} className="skill-icon-img" />
+        <div className="skills-categories-grid">
+          {skillCategories.map((category) => (
+            <div key={category.category} className="skill-category">
+              <motion.h3
+                className="skill-category-title"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.5 }}
+              >
+                {category.category}
+              </motion.h3>
+              <motion.div
+                className="skills-grid"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-100px' }}
+              >
+                {category.skills.map((skill) => (
+                  <motion.div key={skill.name} variants={itemVariants} className="card skill-card">
+                    <div className="skill-card-content">
+                      <div className="card-icon">
+                        <img src={skill.icon} alt={skill.name} className="skill-icon-img" />
+                      </div>
+                      <h4 className="skill-name">{skill.name}</h4>
                     </div>
-                    <h4 className="skill-name">{skill.name}</h4>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        ))}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
