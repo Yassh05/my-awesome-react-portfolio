@@ -24,12 +24,6 @@ const educationData = [
 
 const experienceData = [
   {
-    title: 'Tech Head',
-    organization: 'Victors Club',
-    period: 'Aug 2024 - Present',
-    description: 'Leading technical initiatives and managing tech-related events for the college society.',
-  },
-  {
     title: 'Web Development Intern',
     organization: 'Company Name',
     period: 'Jun 2024 - Present',
