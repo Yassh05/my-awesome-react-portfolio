@@ -4,6 +4,14 @@ import { motion } from 'framer-motion';
 const achievements = [
   {
     year: '2025',
+    title: 'SIH 2025 — Finalist',
+    organization: 'Smart India Hackathon',
+    description: 'Selected as a finalist in Smart India Hackathon 2025, one of India\'s largest innovation-driven hackathons organized by the Government of India.',
+    tags: ['Hackathon', 'Finalist', 'Innovation'],
+    icon: Trophy,
+  },
+  {
+    year: '2025',
     title: 'Best Senator Award — Wisdom Bharati Forum',
     organization: 'National Youth Parliament',
     description: 'Honored as the Best Senator for exceptional articulation, leadership, and impactful participation in the National Youth Parliament organized by WBF.',
