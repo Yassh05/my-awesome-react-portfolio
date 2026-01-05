@@ -1704,6 +1704,18 @@ button {
   font-weight: 500;
 }
 
+.timeline-score {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  background-color: hsla(175, 80%, 50%, 0.15);
+  border: 1px solid hsl(var(--primary) / 0.3);
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+}
+
 .timeline-title {
   font-size: 1rem;
   font-weight: 600;
