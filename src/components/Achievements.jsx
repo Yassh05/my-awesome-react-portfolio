@@ -12,9 +12,9 @@ const achievements = [
   },
   {
     year: '2025',
-    title: 'Hack o Relay 4.0 — Winner',
+    title: 'Hack o Relay 4.0 — Special Category Winner',
     organization: 'GDG Club, Dronacharya College of Engineering',
-    description: 'Won the Hack o Relay 4.0 hackathon organized by the Google Developer Groups club at DCE, showcasing innovation and technical excellence.',
+    description: 'Won the Special Category at Hack o Relay 4.0 hackathon organized by the Google Developer Groups club at DCE, showcasing innovation and technical excellence.',
     tags: ['Hackathon', 'Winner', 'GDG'],
     icon: Trophy,
   },
