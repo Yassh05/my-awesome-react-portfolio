@@ -1399,7 +1399,8 @@ button {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
+  max-width: 28rem;
 }
 
 .projects-grid {
@@ -1421,7 +1422,7 @@ button {
 
 @media (min-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   
   .projects-grid {
@@ -1439,7 +1440,7 @@ button {
 
 @media (min-width: 1024px) {
   .skills-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   
   .projects-grid {
