@@ -808,6 +808,7 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
