@@ -6,18 +6,21 @@ const educationData = [
     title: 'B.Tech in Computer Science (AI/ML)',
     organization: 'Dronacharya College of Engineering',
     period: '2023 - 2027',
+    score: '8.2 CGPA',
     description: 'Specializing in Artificial Intelligence and Machine Learning with strong foundation in Data Structures and Algorithms.',
   },
   {
     title: 'Higher Secondary (12th)',
     organization: 'G.D. Goenka Public School',
-    period: '2022 -2023',
+    period: '2022 - 2023',
+    score: '88%',
     description: 'Completed with focus on Science and Mathematics.',
   },
   {
     title: 'Secondary Education (10th)',
     organization: 'Meenakshi Public School',
     period: '2020 - 2021',
+    score: '93%',
     description: 'Completed secondary education with excellent academic performance.',
   },
 ];
@@ -58,6 +61,11 @@ const TimelineCard = ({ item, type }) => (
           <Calendar size={14} />
           <span>{item.period}</span>
         </div>
+        {item.score && (
+          <div className="timeline-score">
+            <span>{item.score}</span>
+          </div>
+        )}
       </div>
       <h4 className="timeline-title">{item.title}</h4>
       <p className="timeline-organization">{item.organization}</p>
