@@ -72,7 +72,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="contact-info-label">Email</p>
-                  <p className="contact-info-value">yash_sharma0512@outlook.com</p>
+                  <p className="contact-info-value">yashsharmaa555@gmail.com</p>
                 </div>
               </a>
 
@@ -92,7 +92,7 @@ const Contact = () => {
               <h4 className="font-display text-lg font-semibold mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://linkedin.com/in/yasshsharma"
+                  href="https://www.linkedin.com/in/yashsharma05/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-social"
@@ -108,7 +108,7 @@ const Contact = () => {
                   <Github size={24} />
                 </a>
                 <a
-                  href="https://www.hackerrank.com/profile/yash_sharma0512"
+                  href="https://www.hackerrank.com/profile/yashsharmaa555"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-social"
@@ -116,7 +116,7 @@ const Contact = () => {
                   <Code2 size={24} />
                 </a>
                 <a
-                  href="https://leetcode.com/u/YOUR_LEETCODE_USERNAME"
+                  href="https://leetcode.com/u/Yashxsharma/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-social"

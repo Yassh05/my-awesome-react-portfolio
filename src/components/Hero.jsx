@@ -90,7 +90,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <a
-                href="https://linkedin.com/in/yasshsharma"
+                href="https://www.linkedin.com/in/yashsharma05/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -106,7 +106,7 @@ const Hero = () => {
                 <Github size={24} />
               </a>
               <a
-                href="https://www.hackerrank.com/profile/yash_sharma0512"
+                href="https://www.hackerrank.com/profile/yashsharmaa555"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -114,7 +114,7 @@ const Hero = () => {
                 <Code2 size={24} />
               </a>
               <a
-                href="https://leetcode.com/u/YOUR_LEETCODE_USERNAME"
+                href="https://leetcode.com/u/Yashxsharma/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
