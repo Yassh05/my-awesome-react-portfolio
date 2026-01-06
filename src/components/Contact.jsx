@@ -108,7 +108,7 @@ const Contact = () => {
                   <Github size={24} />
                 </a>
                 <a
-                  href="https://www.hackerrank.com/profile/yashsharmaa555"
+                  href="https://leetcode.com/u/Yashxsharma/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-social"
@@ -116,7 +116,7 @@ const Contact = () => {
                   <Code2 size={24} />
                 </a>
                 <a
-                  href="https://leetcode.com/u/Yashxsharma/"
+                  href="https://www.hackerrank.com/profile/yashsharmaa555"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-social"

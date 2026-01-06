@@ -106,7 +106,7 @@ const Hero = () => {
                 <Github size={24} />
               </a>
               <a
-                href="https://www.hackerrank.com/profile/yashsharmaa555"
+                href="https://leetcode.com/u/Yashxsharma/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -114,7 +114,7 @@ const Hero = () => {
                 <Code2 size={24} />
               </a>
               <a
-                href="https://leetcode.com/u/Yashxsharma/"
+                href="https://www.hackerrank.com/profile/yashsharmaa555"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
