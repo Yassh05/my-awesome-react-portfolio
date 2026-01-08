@@ -3,6 +3,13 @@ import { motion } from 'framer-motion';
 
 const certifications = [
   {
+    title: 'Deloitte Australia Data Analytics Job Simulation',
+    issuer: 'Deloitte - Forage',
+    date: 'October 2025',
+    tags: ['Data Analytics', 'Dashboards'],
+    verified: true,
+  },
+  {
     title: 'Programming In Java',
     issuer: 'NPTEL ONLINE CERTIFICATION',
     date: 'May 2025',
