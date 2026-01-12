@@ -69,9 +69,11 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"q
+              href ="https://yassh05.github.io/PORTFOLIO/yash_resume.pdf"
+              target="_blank"
+                rel="noopener noreferrer"
+                // href="/resume.pdf"
+                // download="Yash_Sharma_Resume.pdf"
                 className="btn btn-primary"
               >
                 <Download size={20} />
