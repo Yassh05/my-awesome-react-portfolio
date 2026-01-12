@@ -71,7 +71,7 @@ const Hero = () => {
               <a
                 href="/resume.pdf"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer"q
                 className="btn btn-primary"
               >
                 <Download size={20} />
