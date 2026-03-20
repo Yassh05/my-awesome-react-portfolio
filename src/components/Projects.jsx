@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: 'Victors Club Website',
+    description: 'Drafted a modern website for Victors Club, a college technical club, showcasing events, team, and activities.',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop',
+    liveUrl: 'https://victors-gamma.vercel.app/',
+    sourceUrl: 'https://github.com/Yassh05/',
+    tags: ['React', 'Web Development', 'Vercel'],
+  },
+  {
     title: 'Ramprastha Real Estate Website',
     description: 'Developed a professional, responsive website for Ramprastha Group to showcase real estate projects and company details.',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
