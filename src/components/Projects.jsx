@@ -1,11 +1,12 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
+import victorsClubImage from '@/assets/victors-club.jpeg';
 
 const projects = [
   {
     title: 'Victors Club Website',
     description: 'Drafted a modern website for Victors Club, a college technical club, showcasing events, team, and activities.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop',
+    image: victorsClubImage,
     liveUrl: 'https://victors-gamma.vercel.app/',
     sourceUrl: 'https://github.com/Yassh05/Victors',
     tags: ['React', 'Web Development', 'Vercel'],
