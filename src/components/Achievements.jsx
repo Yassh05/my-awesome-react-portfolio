@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 
 const achievements = [
   {
+    year: '2026',
+    title: 'GATE 2026 CS — Qualified',
+    organization: 'Graduate Aptitude Test in Engineering',
+    description: 'Successfully cleared GATE 2026 in Computer Science, one of India\'s most competitive national-level examinations for engineering graduates.',
+    tags: ['GATE', 'Computer Science', 'National Exam'],
+    icon: Star,
+  },
+  {
     year: '2025',
     title: 'SIH 2025 — Finalist',
     organization: 'Smart India Hackathon',
