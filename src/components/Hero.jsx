@@ -69,7 +69,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <a
-              href ="https://yassh05.github.io/PORTFOLIO/yash_resume.pdf"
+              href ="https://yassh05.github.io/PORTFOLIO/Yash Resume.pdf"
               target="_blank"
                 rel="noopener noreferrer"
                 // href="/resume.pdf"

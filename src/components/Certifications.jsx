@@ -3,6 +3,13 @@ import { motion } from 'framer-motion';
 
 const certifications = [
   {
+    title: 'Introduction to Machine Learning',
+    issuer: 'NPTEL ONLINE CERTIFICATION',
+    date: 'Nov 2025',
+    tags: ['Machine Learning','Python'],
+    verified: true,
+  },
+  {
     title: 'Deloitte Australia Data Analytics Job Simulation',
     issuer: 'Deloitte - Forage',
     date: 'October 2025',
