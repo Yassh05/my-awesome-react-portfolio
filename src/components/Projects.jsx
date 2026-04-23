@@ -3,6 +3,16 @@ import { motion } from 'framer-motion';
 import victorsClubImage from '@/assets/victors-club.jpeg';
 
 const projects = [
+
+  {
+    title: 'Clear Sinus AI',
+    description: 'Built an AI-powered medical decision support system that predicts sinus and nasal disease severity using symptoms, lab metrics, and CT findings.',
+    image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=400&fit=crop',
+    liveUrl: 'https://clear-sinus-ai.vercel.app/',
+    sourceUrl: 'https://github.com/Yassh05/clear-sinus-ai',
+    tags: ['Python', 'React', 'XGBoost', 'Healthcare AI'],
+  },
+
   {
     title: 'Victors Club Website',
     description: 'Drafted a modern website for Victors Club, a college technical club, showcasing events, team, and activities.',
@@ -34,31 +44,31 @@ const projects = [
     liveUrl: 'https://yassh05.github.io/Foxx-Fitness/',
     sourceUrl: 'https://github.com/Yassh05/Foxx-Fitness/',
     tags: ['HTML', 'CSS', 'JavaScript'],
-  },
-  {
-    title: 'Weather App',
-    description: 'Developed a real-time weather app that fetches weather data based on user location with beautiful UI.',
-    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop',
-    liveUrl: 'https://yassh05.github.io/Weather_website/',
-    sourceUrl: 'https://github.com/Yassh05/Weather_website/',
-    tags: ['JavaScript', 'API', 'CSS'],
-  },
-  {
-    title: 'Calculator',
-    description: 'Designed a fully functional calculator supporting basic arithmetic operations with sleek design.',
-    image: 'https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop',
-    liveUrl: 'https://yassh05.github.io/CALCULATOR/',
-    sourceUrl: 'https://github.com/Yassh05/CALCULATOR/',
-    tags: ['JavaScript', 'HTML', 'CSS'],
-  },
-  {
-    title: 'Rock Paper Scissors Game',
-    description: 'Built an interactive browser-based game with smooth animations and score tracking.',
-    image: 'https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=600&h=400&fit=crop',
-    liveUrl: 'https://yassh05.github.io/Rock-Paper-Scissors_Game/',
-    sourceUrl: 'https://github.com/Yassh05/Rock-Paper-Scissors_Game/',
-    tags: ['JavaScript', 'Game Dev', 'CSS'],
-  },
+  }
+  // {
+  //   title: 'Weather App',
+  //   description: 'Developed a real-time weather app that fetches weather data based on user location with beautiful UI.',
+  //   image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop',
+  //   liveUrl: 'https://yassh05.github.io/Weather_website/',
+  //   sourceUrl: 'https://github.com/Yassh05/Weather_website/',
+  //   tags: ['JavaScript', 'API', 'CSS'],
+  // },
+  // {
+  //   title: 'Calculator',
+  //   description: 'Designed a fully functional calculator supporting basic arithmetic operations with sleek design.',
+  //   image: 'https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop',
+  //   liveUrl: 'https://yassh05.github.io/CALCULATOR/',
+  //   sourceUrl: 'https://github.com/Yassh05/CALCULATOR/',
+  //   tags: ['JavaScript', 'HTML', 'CSS'],
+  // },
+  // {
+  //   title: 'Rock Paper Scissors Game',
+  //   description: 'Built an interactive browser-based game with smooth animations and score tracking.',
+  //   image: 'https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=600&h=400&fit=crop',
+  //   liveUrl: 'https://yassh05.github.io/Rock-Paper-Scissors_Game/',
+  //   sourceUrl: 'https://github.com/Yassh05/Rock-Paper-Scissors_Game/',
+  //   tags: ['JavaScript', 'Game Dev', 'CSS'],
+  // },
 ];
 
 const containerVariants = {
