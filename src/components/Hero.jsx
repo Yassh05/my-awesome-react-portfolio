@@ -2,7 +2,7 @@ import { Download, Github, Linkedin, Code2, Binary } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-const roles = ['Frontend Developer', 'AI/ML Enthusiast', 'Problem Solver', 'Web Developer'];
+const roles = ['Frontend Developer', 'AI/ML Enthusiast', 'Problem Solver', 'Gamer'];
 
 const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
