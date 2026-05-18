@@ -72,7 +72,7 @@ const Hero = () => {
                 href="/YASH_RESUME.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                download="YASH_RESUME.pdf"
+                download="Yash_Resume.pdf"
                 className="btn btn-primary"
               >
                 <Download size={20} />
