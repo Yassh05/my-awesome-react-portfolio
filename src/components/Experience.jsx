@@ -30,7 +30,7 @@ const experienceData = [
     title: 'Junior Odoo Consultant',
     organization: 'Target Integration',
     period: 'Jul 2026 - Present',
-    description: '',
+    description: 'Onboarding into Odoo ERP implementation and support processes, including [Sales/CRM/Accounting].',
   },
   {
     title: 'IT & AI Intern',
