@@ -11,6 +11,14 @@ const achievements = [
     icon: Star,
   },
   {
+    year: '2026',
+    title: 'NCAT 2026 — AIR 5',
+    organization: 'National Creativity Aptitude Test',
+    description: 'Secured All India Rank 5 in a national-level aptitude exam testing creativity, logic, and innovation.',
+    tags: ['Aptitude', 'AIR 5', 'Creative Thinking'],
+    icon: Star,
+  },
+  {
     year: '2025',
     title: 'SIH 2025 — Finalist',
     organization: 'Smart India Hackathon',

@@ -6,7 +6,7 @@ const educationData = [
     title: 'B.Tech in Computer Science (AI/ML)',
     organization: 'Dronacharya College of Engineering',
     period: '2023 - 2027',
-    score: '8.2 CGPA',
+    score: '8.4 CGPA',
     description: 'Specializing in Artificial Intelligence and Machine Learning with strong foundation in Data Structures and Algorithms.',
   },
   {
@@ -26,6 +26,12 @@ const educationData = [
 ];
 
 const experienceData = [
+  {
+    title: 'Junior Odoo Consultant',
+    organization: 'Target Integration',
+    period: 'Jul 2026 - Present',
+    description: '',
+  },
   {
     title: 'IT & AI Intern',
     organization: 'Subros Limited',
