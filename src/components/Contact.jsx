@@ -151,6 +151,7 @@ const Contact = () => {
                 <input
                   type="text"
                   required
+                  maxLength={100}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="form-input"
@@ -162,6 +163,7 @@ const Contact = () => {
                 <input
                   type="email"
                   required
+                  maxLength={255}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="form-input"
@@ -173,6 +175,7 @@ const Contact = () => {
                 <textarea
                   required
                   rows={5}
+                  maxLength={2000}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="form-input form-textarea"
