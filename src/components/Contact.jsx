@@ -1,8 +1,15 @@
 import { Mail, MapPin, Send, Github, Linkedin, Code2, Binary, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { z } from 'zod';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be less than 100 characters'),
+  email: z.string().trim().email('Invalid email address').max(255, 'Email must be less than 255 characters'),
+  message: z.string().trim().min(1, 'Message is required').max(2000, 'Message must be less than 2000 characters'),
+});
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,13 +24,16 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      const parsed = contactSchema.safeParse(formData);
+      if (!parsed.success) {
+        toast.error(parsed.error.issues[0]?.message || 'Please check your inputs.');
+        setIsSubmitting(false);
+        return;
+      }
+
       const { error } = await supabase
         .from('contact_messages')
-        .insert({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        });
+        .insert(parsed.data);
 
       if (error) throw error;
 
@@ -141,6 +151,7 @@ const Contact = () => {
                 <input
                   type="text"
                   required
+                  maxLength={100}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="form-input"
@@ -152,6 +163,7 @@ const Contact = () => {
                 <input
                   type="email"
                   required
+                  maxLength={255}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="form-input"
@@ -163,6 +175,7 @@ const Contact = () => {
                 <textarea
                   required
                   rows={5}
+                  maxLength={2000}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="form-input form-textarea"
