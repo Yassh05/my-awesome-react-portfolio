@@ -24,13 +24,16 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      const parsed = contactSchema.safeParse(formData);
+      if (!parsed.success) {
+        toast.error(parsed.error.issues[0]?.message || 'Please check your inputs.');
+        setIsSubmitting(false);
+        return;
+      }
+
       const { error } = await supabase
         .from('contact_messages')
-        .insert({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        });
+        .insert(parsed.data);
 
       if (error) throw error;
 
